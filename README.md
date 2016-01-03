@@ -4,7 +4,8 @@ Author - Daniel Evans
 
 What is it?
 -------------
-It is a tic tac toe application implemented using Java Swing API 
+Uses the Java Swing API in order to create a functional and entertaining Tic Tac Toe game intended for two users that displays the tic tac toe structure and informs the users of the winner
+
 
 External libraries 
 --------------------
