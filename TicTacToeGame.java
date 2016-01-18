@@ -133,27 +133,30 @@ public class TicTacToeGame extends WindowController implements ActionListener {
     if(player1.getForeground().equals(Color.RED)) {
       if (evt.getSource() == pBtn[0][0]) {
         
-        // This is used to compare values of the array in the if statement below
-        // If the combinations below are equal(they will all be one)
-        // player 1 or 2 
+        // Used to determine winner
+        // win[0][0] corresponds to the top left position in the tic tac toe 'matrix' 
+        // When any of the columns, rows, or diagonals are full of X's, the respective array 
+        // values will all be 1 and the winner will be declared
         win[0][0] = 1;
         
         // Removes button from canvas so the player can't click it again
         pBtn[0][0].setVisible(false);
         pBtn[1][0].setVisible(false);
         
-        // Removes the letter (A,B,...I) from the tic tac toe
+        // Removes the letter (A,B,...I) from the tic tac toe structure 
         letterDisplay[0].hide();
-        // Places an x at the corresponding letter place 
+        // Places an X at the corresponding letter place 
         new X(ticTacToe.getHorizStartX()-125,ticTacToe.getVertStartY()+25
              ,50,canvas);
         
-        // Colors indicate whose turn it is
+        // Colors of text indicate whose turn it is
         // Red indicates that it is that players turn 
         player2.setForeground(Color.RED);
         player1.setForeground(Color.BLACK);
         
-        //for(int i=0; i<win.length;i++)
+        // Determines if player1 (in this case) has won by checking if the array
+        // values (which are set to 1 after the corresponding button press)
+        // that are in a row, diagonal, or column are equa' 
         if(win[0][0]==win[0][1] && win[0][1]==win[0][2] ||
            win[0][3]==win[0][4] && win[0][4]==win[0][5] ||
            win[0][6]==win[0][7] && win[0][7]==win[0][8] ||
